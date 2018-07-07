@@ -1,0 +1,367 @@
+<!doctype html>
+<html>
+<head>
+<script type="text/Javascript">
+function datechecker(){
+	arrival_dey=document.getElementById("arrival-day").value
+	arrival_menth=document.getElementById("arrival-month").value
+	arrival_yer=document.getElementById("arrival-year").value
+	
+	departure_dey=document.getElementById("departure-day").value
+	departure_menth=document.getElementById("departure-month").value
+	departure_yer=document.getElementById("departure-year").value
+	
+	rum1=document.getElementById("room1").value
+	rum2=document.getElementById("room2").value
+	rum3=document.getElementById("room3").value
+	rum4=document.getElementById("room4").value
+	rum5=document.getElementById("room5").value
+	rum6=document.getElementById("room6").value
+	rum7=document.getElementById("room7").value
+	rum8=document.getElementById("room8").value
+	rum9=document.getElementById("room9").value
+	rum10=document.getElementById("room10").value
+	rum11=document.getElementById("room11").value
+	rum12=document.getElementById("room12").value
+	rum13=document.getElementById("room13").value
+	
+	if(departure_yer < arrival_yer){
+	/*ALERT FUNC NA */
+		alert("WRONG Input or MISSING Fields!!")
+	}else 
+if(departure_menth < arrival_menth || departure_menth < 5 || arrival_menth < 5){
+	/*ALERT FUNC NA */
+		alert("WRONG Input or MISSING Fields!!")
+	}else if(departure_dey < arrival_dey){
+	/*ALERT FUNC NA */
+		alert("WRONG Input or MISSING Fields!!")
+		}
+	else if(arrival_menth == 5 && arrival_dey <= 14){
+		/*ALERT FUNC NA */
+		alert("WRONG Input or MISSING Fields!!")
+	}else if(rum1==0 && rum2==0 && rum3==0 && rum4==0 && rum5==0 && rum6==0 && rum7==0 && rum8==0 && rum9==0 && rum10==0 && rum11==0 && rum12==0 && rum13==0){
+	/*ALERT FUNC NA */
+		alert("WRONG Input or MISSING Fields!!")
+	
+	}else{
+	/*ETO YUNG TAMA YUNG DATES */
+	window.location.href = '#';
+	}
+}
+function compute_total(){
+	tot1=document.getElementById("room1").value
+	tot2=document.getElementById("room2").value
+	tot3=document.getElementById("room3").value
+	tot4=document.getElementById("room4").value
+	tot5=document.getElementById("room5").value
+	tot6=document.getElementById("room6").value
+	tot7=document.getElementById("room7").value
+	tot8=document.getElementById("room8").value
+	tot9=document.getElementById("room9").value
+	tot10=document.getElementById("room10").value
+	tot11=document.getElementById("room11").value
+	tot12=document.getElementById("room12").value
+	tot13=document.getElementById("room13").value
+	
+	tot1*=2800;
+	tot2*=3000;
+	tot3*=5000;
+	tot4*=5500;
+	tot5*=6000;
+	tot6*=6000;
+	tot7*=8500;
+	tot8*=13000;
+	tot9*=12000;
+	tot10*=12000;
+	tot11*=12000;
+	tot12*=14500;
+	tot13*=0;
+	
+	tot14=tot13;
+	
+	document.getElementById("total1").value=tot1
+	document.getElementById("total2").value=tot2
+	document.getElementById("total3").value=tot3
+	document.getElementById("total4").value=tot4
+	document.getElementById("total5").value=tot5
+	document.getElementById("total6").value=tot6
+	document.getElementById("total7").value=tot7
+	document.getElementById("total8").value=tot8
+	document.getElementById("total9").value=tot9
+	document.getElementById("total10").value=tot10
+	document.getElementById("total11").value=tot11
+	document.getElementById("total12").value=tot12
+	document.getElementById("total13").value=tot13
+	
+	document.getElementById("total-ly").value=tot13
+
+}
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>
+				<select id="arrival-day">
+				<script>
+					for(j=0;j<31;++j)
+					document.write('<option value="'+(j+1)+'">'+(j+1)+'</option>')
+				</script>
+				</select>
+			</td>
+			<td>
+				<select id="arrival-month">
+					<option value="1">January</option>
+					<option value="2">February</option>
+					<option value="3">March</option>
+					<option value="4">April</option>
+					<option value="5">May</option>
+					<option value="6">June</option>
+					<option value="7">July</option>
+					<option value="8">August</option>
+					<option value="9">September</option>
+					<option value="10">October</option>
+					<option value="11">November</option>
+					<option value="12">December</option>
+				</select>
+			</td>
+			<td>
+				<select id="arrival-year">
+				<script>
+					for(k=2014;k<2030;++k)
+					document.write('<option value="'+(k)+'">'+(k)+'</option>')
+				</script>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<select id="departure-day">
+					<script>
+					for(j=0;j<31;++j)
+					document.write('<option value="'+(j+1)+'">'+(j+1)+'</option>')
+				</script>
+				</select>
+			</td>
+			<td>
+				<select id="departure-month">
+					<option value="1">January</option>
+					<option value="2">February</option>
+					<option value="3">March</option>
+					<option value="4">April</option>
+					<option value="5">May</option>
+					<option value="6">June</option>
+					<option value="7">July</option>
+					<option value="8">August</option>
+					<option value="9">September</option>
+					<option value="10">October</option>
+					<option value="11">November</option>
+					<option value="12">December</option>
+				</select>
+			</td>
+			<td>
+				<select id="departure-year">
+					<script>
+					for(k=2014;k<2030;++k)
+					document.write('<option value="'+(k)+'">'+(k)+'</option>')
+				</script>
+				</select>
+			</td>
+		</tr>
+
+</table>
+<br/><br/>
+<table  cellspacing="15"cellpadding="10">
+	<tr>
+		<th colspan="4">ACCOMODATION</th>
+	</tr>
+	<tr>
+		<td>
+		Rooms and Rates(per day in php)
+		</td>
+		<td>Quantity
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Small Cabanas - 2,800.00
+		</td>
+		<td>
+			<select onchange="compute_total()"id="room1">
+			<script>
+				for(l=0;l<11;++l)
+				document.write('<option value="'+(l)+'">'+(l)+'</option>')
+			</script>
+			</select>
+		</td>
+		<td><input type="text"id="total1" readonly /></td>
+	</tr>
+	<tr>
+		<td>Cabanas - 3,000.00
+		</td>
+		<td>
+			<select onchange="compute_total()"id="room2">
+			<script>
+				for(l=0;l<11;++l)
+				document.write('<option value="'+(l)+'">'+(l)+'</option>')
+			</script>
+			</select>
+		</td>
+		<td><input type="text"id="total2" readonly /></td>
+	</tr>
+	<tr>
+		<td>Riviera Bedroom - 5,000.00
+		</td>
+		<td>
+			<select onchange="compute_total()"id="room3">
+			<script>
+				for(l=0;l<11;++l)
+				document.write('<option value="'+(l)+'">'+(l)+'</option>')
+			</script>
+			</select>
+		</td>
+		<td><input type="text"id="total3" readonly /></td>
+	</tr>
+	<tr>
+		<td>Sunset Rooms - 5,500.00
+		</td>
+		<td>
+			<select onchange="compute_total()"id="room4">
+			<script>
+				for(l=0;l<11;++l)
+				document.write('<option value="'+(l)+'">'+(l)+'</option>')
+			</script>
+			</select>
+		</td>
+		<td><input type="text"id="total4" readonly /></td>
+	</tr>
+	<tr>
+		<td>La Marea - 6,000.00
+		</td>
+		<td>
+			<select onchange="compute_total()"id="room5">
+			<script>
+				for(l=0;l<11;++l)
+				document.write('<option value="'+(l)+'">'+(l)+'</option>')
+			</script>
+			</select>
+		</td>
+		<td><input type="text"id="total5" readonly /></td>
+	</tr>
+	<tr>
+		<td>La Breeza - 6,000.00
+		</td>
+		<td>
+			<select onchange="compute_total()"id="room6">
+			<script>
+				for(l=0;l<11;++l)
+				document.write('<option value="'+(l)+'">'+(l)+'</option>')
+			</script>
+			</select>
+		</td>
+		<td><input type="text"id="total6" readonly /></td>
+	</tr>
+	<tr>
+		<td>Villa Del Mar - 8,500.00
+		</td>
+		<td>
+			<select onchange="compute_total()"id="room7">
+			<script>
+				for(l=0;l<11;++l)
+				document.write('<option value="'+(l)+'">'+(l)+'</option>')
+			</script>
+			</select>
+		</td>
+		<td><input type="text"id="total7" readonly /></td>
+	</tr>
+	<tr>
+		<td>Suite - 13,000.00
+		</td>
+		<td>
+			<select onchange="compute_total()"id="room8">
+			<script>
+				for(l=0;l<11;++l)
+				document.write('<option value="'+(l)+'">'+(l)+'</option>')
+			</script>
+			</select>
+		</td>
+		<td><input type="text"id="total8" readonly /></td>
+	</tr>
+	<tr>
+		<td>Familia 8 - 12,000.00
+		</td>
+		<td>
+			<select onchange="compute_total()"id="room9">
+			<script>
+				for(l=0;l<11;++l)
+				document.write('<option value="'+(l)+'">'+(l)+'</option>')
+			</script>
+			</select>
+		</td>
+		<td><input type="text"id="total9" readonly /></td>
+	</tr>
+	<tr>
+		<td>Familia 14 - 12,000.00
+		</td>
+		<td>
+			<select onchange="compute_total()"id="room10">
+			<script>
+				for(l=0;l<11;++l)
+				document.write('<option value="'+(l)+'">'+(l)+'</option>')
+			</script>
+			</select>
+		</td>
+		<td><input type="text"id="total10"readonly /></td>
+	</tr>
+	<tr>
+		<td>El Grande Junior - 12,000.00
+		</td>
+		<td>
+			<select onchange="compute_total()"id="room11">
+			<script>
+				for(l=0;l<11;++l)
+				document.write('<option value="'+(l)+'">'+(l)+'</option>')
+			</script>
+			</select>
+		</td>
+		<td><input type="text"id="total11" readonly /></td>
+	</tr>
+	<tr>
+		<td>El Grande - 14,500.00
+		</td>
+		<td>
+			<select onchange="compute_total()"id="room12">
+			<script>
+				for(l=0;l<11;++l)
+				document.write('<option value="'+(l)+'">'+(l)+'</option>')
+			</script>
+			</select>
+		</td>
+		<td><input type="text"id="total12" readonly /></td>
+	</tr>
+	<tr>
+		<td>Meeting rooms / <br/>Convention Center<br/> - (Rate Subject To Negotiation)
+		</td>
+		<td>
+			<select onchange="compute_total()"id="room13">
+			<script>
+				for(l=0;l<11;++l)
+				document.write('<option value="'+(l)+'">'+(l)+'</option>')
+			</script>
+			</select>
+		</td>
+		<td>
+		<input type="text"id="total12" readonly /></td>
+	</tr>
+	<tr>
+	<td></td>
+	<td><b>Total</b></td>
+	<td><input type="text"id="total14" readonly /></td>
+	</tr>
+</table>
+<br/>
+<br/>
+<button onclick="datechecker()">CHECK AVAILABILITY</button>
+
+</body>
+</html>
